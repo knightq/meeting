@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100308165456) do
+ActiveRecord::Schema.define(:version => 20100309145354) do
+
+  create_table "attenders", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "meeting_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attenders", ["meeting_id"], :name => "attenders_meeting_id_fk"
 
   create_table "meetings", :force => true do |t|
     t.string   "title"
@@ -20,7 +30,19 @@ ActiveRecord::Schema.define(:version => 20100308165456) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
+    t.integer  "organizator"
   end
+
+  add_index "meetings", ["organizator"], :name => "meetings_organizator_fk"
+
+  create_table "proposal_dates", :force => true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "meeting_id"
+  end
+
+  add_index "proposal_dates", ["meeting_id"], :name => "proposal_dates_meeting_id_fk"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -31,5 +53,11 @@ ActiveRecord::Schema.define(:version => 20100308165456) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  add_foreign_key "attenders", "meetings", :name => "attenders_meeting_id_fk"
+
+  add_foreign_key "meetings", "attenders", :name => "meetings_organizator_fk", :column => "organizator"
+
+  add_foreign_key "proposal_dates", "meetings", :name => "proposal_dates_meeting_id_fk"
 
 end

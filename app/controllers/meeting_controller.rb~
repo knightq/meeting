@@ -1,5 +1,13 @@
+#require 'plugins/calendar'
 class MeetingController < ApplicationController
   def index
+   @meetings = Meeting.all
+  end
+
+  def show
+   @model = Meeting.find(params[:id])
+  end
+
    @meetings = Meeting.all
   end
 
@@ -7,7 +15,6 @@ class MeetingController < ApplicationController
     meeting = Meeting.find(params[:id])
     @cart = find_cart
     @cart.add_meeting(meeting)
-  end
   rescue ActiveRecord::RecordNotFound
     logger.error("Tentato accesso a meeting non valido #{params[:id]}" )
     flash[:notice] = "Meeting non valido"

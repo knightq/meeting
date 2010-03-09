@@ -17,6 +17,15 @@ h1 {
         vertical-align: top;
 }
 
+div.top_left_corner {
+  color: navy;
+  border: solid black thin;
+  border-left: none;
+  border-top: none;
+  width: 50%;
+  height: 50%;
+}
+
 #meeting-list .list-image {
   width:        60px;
   height:       70px;
@@ -86,10 +95,9 @@ h1 {
 #side {
   float: left;
   padding-top: 1em;
-  padding-left: 1em;
   padding-bottom: 1em;
-  width: 12em;
-  background: #141;
+  width: 13em;
+  background: #8b8b8b;
 }
 
 #side a {

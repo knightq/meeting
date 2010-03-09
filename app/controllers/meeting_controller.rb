@@ -1,6 +1,11 @@
+#require 'plugins/calendar'
 class MeetingController < ApplicationController
   def index
    @meetings = Meeting.all
+  end
+
+  def show
+   @model = Meeting.find(params[:id])
   end
 
   def add_to_cart

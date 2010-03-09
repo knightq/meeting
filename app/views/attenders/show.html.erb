@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @attender.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @attender.email %>
+</p>
+
+<p>
+  <b>Organizator:</b>
+  <%=h @attender.organizator %>
+</p>
+
+
+<%= link_to 'Edit', edit_attender_path(@attender) %> |
+<%= link_to 'Back', attenders_path %>

@@ -1,0 +1,24 @@
+<h1>Listing attenders</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Organizator</th>
+  </tr>
+
+<% @attenders.each do |attender| %>
+  <tr>
+    <td><%=h attender.name %></td>
+    <td><%=h attender.email %></td>
+    <td><%=h attender.organizator %></td>
+    <td><%= link_to 'Show', attender %></td>
+    <td><%= link_to 'Edit', edit_attender_path(attender) %></td>
+    <td><%= link_to 'Destroy', attender, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New attender', new_attender_path %>
