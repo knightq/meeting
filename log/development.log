@@ -1,0 +1,1543 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (79.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (58.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100308161850')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+Migrating to CreateMeetings (20100308163525)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+Migrating to CreateMeetings (20100308163525)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+Migrating to CreateMeetings (20100308163525)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "meetings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "date" date, "start_time" time, "end_time" time, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100308163525')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("meetings")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 17:42:11) [GET]
+
+ActionController::RoutingError (No route matches "/store" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 17:42:17) [GET]
+
+ActionController::RoutingError (No route matches "/meetings" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 17:42:24) [GET]
+
+ActionController::RoutingError (No route matches "/meeting" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 17:42:27) [GET]
+
+ActionController::RoutingError (No route matches "/meetings/index" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 17:42:57) [GET]
+
+ActionController::RoutingError (No route matches "/meeting/index" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 17:44:18) [GET]
+Rendering meeting/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/meeting/index.html.erb:
+1: <h1>Elenco eventi</h1>
+2: <% for event in @meetings -%>
+3:   <div class="entry">
+4:     <%= image_tag(event.image_url) %>
+5:     <h3><%=h event.title %></h3>
+
+    app/views/meeting/index.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 17:45:17) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `find_all' for #<Class:0xb70bc8b0>):
+  app/controllers/meeting_controller.rb:3:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (69.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 17:45:22) [GET]
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/meeting/index.html.erb:
+1: <h1>Elenco eventi</h1>
+2: <% for event in @meetings -%>
+3:   <div class="entry">
+4:     <%= image_tag(event.image_url) %>
+5:     <h3><%=h event.title %></h3>
+
+    app/views/meeting/index.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+Migrating to CreateMeetings (20100308163525)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("meetings")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+Migrating to CreateMeetings (20100308163525)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("meetings")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+Migrating to CreateMeetings (20100308163525)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("meetings")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100308161850)
+Migrating to CreateMeetings (20100308163525)
+Migrating to AddColumnImageUrlToMeeting (20100308165456)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "meetings" ADD "image_url" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100308165456')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("meetings")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mMeeting Load (0.2ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."title" = 'Presentazione Rails') LIMIT 1[0m
+  [4;35;1mMeeting Load (0.1ms)[0m   [0mSELECT "meetings".id FROM "meetings" WHERE ("meetings"."title" = 'Presentazione Rails') LIMIT 1[0m
+  [4;36;1mMeeting Create (0.8ms)[0m   [0;1mINSERT INTO "meetings" ("end_time", "created_at", "title", "body", "image_url", "updated_at", "date", "start_time") VALUES(NULL, '2010-03-07 23:00:00', 'Presentazione Rails', 'Unintroduzione al framework di sviluppo applicazioni web Rails...', 'http://rubyonrails.org/images/rails.png', '2010-03-08 16:57:03', NULL, NULL)[0m
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 17:57:09) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/meeting/index.html.erb:
+1: <h1>Elenco eventi</h1>
+2: <% for event in @meetings -%>
+3:   <div class="entry">
+4:     <%= image_tag(event.image_url) %>
+5:     <h3><%=h event.title %></h3>
+
+    app/views/meeting/index.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (74.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 17:57:11) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/meeting/index.html.erb:
+1: <h1>Elenco eventi</h1>
+2: <% for event in @meetings -%>
+3:   <div class="entry">
+4:     <%= image_tag(event.image_url) %>
+5:     <h3><%=h event.title %></h3>
+
+    app/views/meeting/index.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 17:57:40) [GET]
+
+ActionController::RoutingError (No route matches "/meetings/index" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 17:57:44) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #2 of app/views/meeting/index.html.erb:
+1: <h1>Elenco eventi</h1>
+2: <% for event in @meetings -%>
+3:   <div class="entry">
+4:     <%= image_tag(event.image_url) %>
+5:     <h3><%=h event.title %></h3>
+
+    app/views/meeting/index.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (84.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 17:58:24) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 30ms (View: 26, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:00:51) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:03:18) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:05:10) [GET]
+  [4;36;1mMeeting Load (0.7ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:05:31) [GET]
+  [4;36;1mMeeting Load (0.6ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 29ms (View: 24, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:05:32) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:06:17) [GET]
+  [4;36;1mMeeting Load (1.1ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:07:09) [GET]
+  [4;35;1mMeeting Load (0.7ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:09:56) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:09:59) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:10:00) [GET]
+  [4;36;1mMeeting Load (0.8ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:10:32) [GET]
+  [4;35;1mMeeting Load (0.7ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:10:32) [GET]
+  [4;36;1mMeeting Load (0.7ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:11:21) [GET]
+  [4;36;1mMeeting Load (0.7ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering meeting/index
+Completed in 38ms (View: 32, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:12:53) [GET]
+  [4;35;1mMeeting Load (0.6ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:12:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:14:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:15:15) [GET]
+  [4;36;1mMeeting Load (0.6ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:15:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:16:51) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:16:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:17:10) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:17:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:17:20) [GET]
+  [4;35;1mMeeting Load (0.9ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:17:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:18:30) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:18:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:18:33) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:18:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:18:40) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:18:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:19:33) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-08 18:19:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:19:50) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:20:40) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 46ms (View: 41, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:21:04) [GET]
+  [4;36;1mMeeting Load (0.6ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:21:15) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo="}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:21:19) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo="}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:21:20) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo="}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:22:31) [GET]
+  [4;36;1mMeeting Load (0.8ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:28:37) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:28:39) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template meeting/add_to_cart.erb in view path app/views):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:30:00) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:30:02) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template meeting/add_to_cart.erb in view path app/views):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:30:18) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:31:36) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:31:36) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:31:37) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:34:33) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:35:45) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 13ms (View: 2, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:37:04) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:37:24) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.4ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:38:02) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.4ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 13ms (View: 2, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:38:11) [POST]
+  Parameters: {"authenticity_token"=>"eM1+GbpXdq4heck+89nIpwH8PCpdsX7RzMzJRIFIJTo=", "id"=>"1"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:38:15) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:38:18) [POST]
+  Parameters: {"authenticity_token"=>"BBxUAae9rGQj1OlK/anHGN3kEQlJMf7/zY1nQMQ1Gy8=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing ApplicationController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:39:59) [POST]
+  Parameters: {"authenticity_token"=>"BBxUAae9rGQj1OlK/anHGN3kEQlJMf7/zY1nQMQ1Gy8=", "id"=>"1"}
+
+SyntaxError (/home/asalicetti/Ruby/Rails/meeting/app/controllers/meeting_controller.rb:23: syntax error, unexpected kEND, expecting $end):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (82.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:40:13) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:40:15) [POST]
+  Parameters: {"authenticity_token"=>"BBxUAae9rGQj1OlK/anHGN3kEQlJMf7/zY1nQMQ1Gy8=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:40:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMeeting Load (0.1ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 2) [0m
+Tentato accesso a meeting non valido 2
+Redirected to http://localhost:3001/meeting
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/meeting/add_to_cart/2]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:40:18) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:40:21) [POST]
+  Parameters: {"authenticity_token"=>"BBxUAae9rGQj1OlK/anHGN3kEQlJMf7/zY1nQMQ1Gy8=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:40:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMeeting Load (0.1ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 2) [0m
+Tentato accesso a meeting non valido 2
+Redirected to http://localhost:3001/meeting
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/meeting/add_to_cart/2]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:40:24) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:40:35) [GET]
+  Parameters: {"id"=>"123"}
+  [4;35;1mMeeting Load (0.1ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 123) [0m
+Tentato accesso a meeting non valido 123
+Redirected to http://localhost:3001/meeting
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/meeting/add_to_cart/123]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:40:35) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:42:47) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:42:51) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:43:56) [POST]
+  Parameters: {"authenticity_token"=>"BBxUAae9rGQj1OlK/anHGN3kEQlJMf7/zY1nQMQ1Gy8=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:46:31) [POST]
+  Parameters: {"authenticity_token"=>"BBxUAae9rGQj1OlK/anHGN3kEQlJMf7/zY1nQMQ1Gy8=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+
+NoMethodError (undefined method `merge' for #<Array:0xb6faddc0>):
+  app/models/cart.rb:10:in `add_meeting'
+  app/controllers/meeting_controller.rb:9:in `add_to_cart'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+  [4;36;1mSQL (41.5ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:49:01) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:49:02) [POST]
+  Parameters: {"authenticity_token"=>"BCbG0/lAbGDW7prORWfuiDvtA0sYNgZMVIPic8zquVI=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.2ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+
+TypeError (can't convert Meeting into Array):
+  app/models/cart.rb:9:in `&'
+  app/models/cart.rb:9:in `add_meeting'
+  app/controllers/meeting_controller.rb:9:in `add_to_cart'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:51:37) [POST]
+  Parameters: {"authenticity_token"=>"BCbG0/lAbGDW7prORWfuiDvtA0sYNgZMVIPic8zquVI=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+
+TypeError (can't convert Meeting into Integer):
+  app/models/cart.rb:9:in `[]'
+  app/models/cart.rb:9:in `add_meeting'
+  app/controllers/meeting_controller.rb:9:in `add_to_cart'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:51:51) [POST]
+  Parameters: {"authenticity_token"=>"BCbG0/lAbGDW7prORWfuiDvtA0sYNgZMVIPic8zquVI=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+
+TypeError (Symbol as array index):
+  app/models/cart.rb:9:in `[]'
+  app/models/cart.rb:9:in `add_meeting'
+  app/controllers/meeting_controller.rb:9:in `add_to_cart'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 18:53:22) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:53:24) [POST]
+  Parameters: {"authenticity_token"=>"BCbG0/lAbGDW7prORWfuiDvtA0sYNgZMVIPic8zquVI=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.4ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 16ms (View: 3, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:53:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMeeting Load (0.2ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:53:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMeeting Load (0.4ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 14ms (View: 3, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:54:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMeeting Load (0.2ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+
+NoMethodError (undefined method `include' for #<Array:0xb6cc11fc>):
+  app/models/cart.rb:9:in `add_meeting'
+  app/controllers/meeting_controller.rb:9:in `add_to_cart'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:54:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:54:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMeeting Load (0.2ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:54:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/meeting/add_to_cart/1]
+  [4;36;1mSQL (81.6ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:54:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 14ms (View: 3, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:54:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMeeting Load (0.2ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Completed in 13ms (View: 2, DB: 0) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 18:58:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+
+ActionView::TemplateError (Missing template meeting/_cart_meeting.erb in view path app/views) on line #3 of app/views/meeting/add_to_cart.erb:
+1: <h2>Meeting a cui intendi partecipare</h2>
+2: <ul>
+3:   <%= render(:partial => "cart_meeting" , :collection => @cart.meetings) %>
+4: </ul>
+
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    /usr/lib/ruby/1.8/set.rb:194:in `each_key'
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    app/views/meeting/add_to_cart.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (79.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 19:00:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMeeting Load (0.2ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+
+ActionView::TemplateError (Missing template meeting/_cart_meeting.erb in view path app/views) on line #3 of app/views/meeting/add_to_cart.erb:
+1: <h2>Meeting a cui intendi partecipare</h2>
+2: <ul>
+3:   <%= render(:partial => "cart_meeting" , :collection => @cart.meetings) %>
+4: </ul>
+
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    /usr/lib/ruby/1.8/set.rb:194:in `each_key'
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    app/views/meeting/add_to_cart.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (81.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 19:02:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMeeting Load (0.2ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+
+ActionView::TemplateError (Missing template meeting/_cart_meeting.erb in view path app/views) on line #3 of app/views/meeting/add_to_cart.erb:
+1: <h2>Meeting a cui intendi partecipare</h2>
+2: <ul>
+3:   <%= render(:partial => "cart_meeting" , :collection => @cart.meetings) %>
+4: </ul>
+
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    /usr/lib/ruby/1.8/set.rb:194:in `each_key'
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    app/views/meeting/add_to_cart.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 19:02:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMeeting Load (0.2ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+
+ActionView::TemplateError (Missing template meeting/_cart_meeting.erb in view path app/views) on line #3 of app/views/meeting/add_to_cart.erb:
+1: <h2>Meeting a cui intendi partecipare</h2>
+2: <ul>
+3:   <%= render(:partial => "cart_meeting" , :collection => @cart.meetings) %>
+4: </ul>
+
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    /usr/lib/ruby/1.8/set.rb:194:in `each_key'
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    app/views/meeting/add_to_cart.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 19:03:17) [GET]
+  [4;36;1mMeeting Load (0.6ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 41ms (View: 36, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 19:03:19) [POST]
+  Parameters: {"authenticity_token"=>"8ePK1rsmkNM36WoctulrotwEDWlU8Pp5azo1tjZapNU=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+
+ActionView::TemplateError (Missing template meeting/_cart_meeting.erb in view path app/views) on line #3 of app/views/meeting/add_to_cart.erb:
+1: <h2>Meeting a cui intendi partecipare</h2>
+2: <ul>
+3:   <%= render(:partial => "cart_meeting" , :collection => @cart.meetings) %>
+4: </ul>
+
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    /usr/lib/ruby/1.8/set.rb:194:in `each_key'
+    /usr/lib/ruby/1.8/set.rb:194:in `each'
+    app/views/meeting/add_to_cart.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (76.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 19:06:58) [POST]
+  Parameters: {"authenticity_token"=>"8ePK1rsmkNM36WoctulrotwEDWlU8Pp5azo1tjZapNU=", "id"=>"1"}
+  [4;36;1mMeeting Load (0.3ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Rendered meeting/_cart_meeting (2.8ms)
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 19:07:01) [POST]
+  Parameters: {"authenticity_token"=>"8ePK1rsmkNM36WoctulrotwEDWlU8Pp5azo1tjZapNU=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.3ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Rendered meeting/_cart_meeting (1.1ms)
+Completed in 12ms (View: 2, DB: 2) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 19:18:05) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#add_to_cart (for 127.0.0.1 at 2010-03-08 19:18:07) [POST]
+  Parameters: {"authenticity_token"=>"8ePK1rsmkNM36WoctulrotwEDWlU8Pp5azo1tjZapNU=", "id"=>"1"}
+  [4;35;1mMeeting Load (0.2ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 1) [0m
+Rendering template within layouts/meeting
+Rendering meeting/add_to_cart
+Rendered meeting/_cart_meeting (1.1ms)
+Completed in 14ms (View: 2, DB: 1) | 200 OK [http://localhost/meeting/add_to_cart/1]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 19:19:44) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 48ms (View: 44, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-08 19:19:45) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-09 09:06:03) [GET]
+  [4;36;1mMeeting Load (0.8ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 69ms (View: 54, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#remove_from_cart (for 127.0.0.1 at 2010-03-09 09:06:07) [POST]
+  Parameters: {"authenticity_token"=>"8ePK1rsmkNM36WoctulrotwEDWlU8Pp5azo1tjZapNU=", "id"=>"1"}
+
+ActionController::UnknownAction (No action responded to remove_from_cart. Actions: add_to_cart and index):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-09 09:09:05) [GET]
+  [4;35;1mMeeting Load (0.7ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 60ms (View: 52, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-09 09:11:28) [GET]
+  [4;36;1mMeeting Load (0.8ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 32ms (View: 25, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-09 09:11:57) [GET]
+  [4;35;1mMeeting Load (0.8ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 93ms (View: 85, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-09 09:12:36) [GET]
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/meeting/]
+
+
+Processing MeetingController#index (for 127.0.0.1 at 2010-03-09 09:13:56) [GET]
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" [0m
+Rendering template within layouts/meeting
+Rendering meeting/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/meeting/]
