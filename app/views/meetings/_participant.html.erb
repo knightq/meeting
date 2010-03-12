@@ -1,1 +1,1 @@
-<li><%= find_attender(participant.attender_id).name %></li> 
+<li><%=link_to find_attender(participant.attender_id).name, :controller => 'attenders', :action => 'show', :id => find_attender(participant.attender_id).id %></li> 

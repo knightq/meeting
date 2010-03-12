@@ -8,7 +8,7 @@
     <%= meeting.date unless meeting.date == nil %>
   </td>
   <td width="5%"><%= image_tag(meeting.image_url, :size=>"37x50") %></td>
-  <td width="60%"><%=h meeting.title %></td>
+  <td width="60%"><%=link_to meeting.title, meeting %></td>
   <td width="20%">
     <%= render :partial => "participant", :collection => participants_to(meeting) unless participants_to(meeting).empty? %>  </td>
 </tr>

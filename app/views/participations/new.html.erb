@@ -2,6 +2,8 @@
 
 <% form_for(@participation) do |f| %>
   <%= f.error_messages %>
+  <%= select_tag ":attneder_ids[]", options_from_collection_for_select(@all_attenders, "id", "name"), :multiple=>true %>
+  <%= swapselect :participation, @participation, :attenders, Attender.all.map{ |breed| [breed.name, breed.id] } %>
 
   <p>
     <%= f.submit 'Create' %>

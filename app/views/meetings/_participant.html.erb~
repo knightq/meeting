@@ -1,4 +1,1 @@
-<% if participant %>
-  <li><%= find_attender(participant.attender_id).name %></li> 
-<% end %>
-
+<li><%= find_attender(participant.attender_id).name %></li> 

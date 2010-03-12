@@ -35,6 +35,7 @@ class ParticipationsController < ApplicationController
   # GET /participations/new.xml
   def new
     @participation = Participation.new
+    @all_attenders = Attender.all
 
     respond_to do |format|
       format.html # new.html.erb

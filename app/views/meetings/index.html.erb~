@@ -1,6 +1,6 @@
 <h1>Attualmente in programma</h1>
 
-<table>
+<table id="meetings_list">
   <thead>  
     <th width="5%"></th>
     <th width="10%">Data</th>
@@ -9,6 +9,9 @@
     <th width="20%">Partecipanti</th>
   </thead>
   <tbody>
-    <%= render :partial => "meetings", :collection => @meetings %>
+    <%= render :partial => "meeting", :collection => @meetings %>
   </tbody>
 </table>
+
+<%= link_to "Crea un nuovo meeting", new_meeting_path %>
+

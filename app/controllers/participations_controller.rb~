@@ -6,7 +6,7 @@ class ParticipationsController < ApplicationController
   end
 
   def self.participants_to(meeting_id)
-    Participation.all(:conditions => [":meeting_id = ?", meeting_id])
+    Participation.all(:conditions => ["meeting_id = ?", meeting_id])
   end
 
   # GET /participations
