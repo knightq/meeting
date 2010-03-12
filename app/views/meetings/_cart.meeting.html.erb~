@@ -1,0 +1,3 @@
+  <% for meeting in cart_meeting %>
+     <li><%=h meeting.title %></li>
+  <% end %>

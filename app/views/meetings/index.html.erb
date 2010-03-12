@@ -1,0 +1,14 @@
+<h1>Attualmente in programma</h1>
+
+<table>
+  <thead>  
+    <th width="5%"></th>
+    <th width="10%">Data</th>
+    <th width="5%"></th>
+    <th width="60%">Titolo</th>
+    <th width="20%">Partecipanti</th>
+  </thead>
+  <tbody>
+    <%= render :partial => "meeting", :collection => @meetings %>
+  </tbody>
+</table>

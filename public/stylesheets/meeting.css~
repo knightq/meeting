@@ -17,6 +17,10 @@ h1 {
         vertical-align: top;
 }
 
+p {
+  font-size: 1em sans-serif;
+}
+
 div.top_left_corner {
   color: navy;
   border: solid black thin;
@@ -67,13 +71,12 @@ div.top_left_corner {
 /* Styles for main page */
 
 #banner {
-  background: #43619E;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 30px/60px "Arial", serif;
+  background: #43619E url(/images/logo.gif) no-repeat scroll left top;
+  border-bottom: 2px solid navy;
+  font: 1.2em/2em "Arial", serif;
   color: #FFF;
   text-align: center;
+  height: 52px;
 }
 
 #banner img {
@@ -82,22 +85,26 @@ div.top_left_corner {
 
 #columns {
   background: #8b8b8b;
+  font: 1.2em/2em "Arial", serif;
 }
 
 #main {
   color: #000;
-  margin-left: 13em;
+  margin-left: 400px;
   padding-top: 1ex;
   padding-left: 2em;
   background: white;
+  height: 500px;
+  overflow: scroll;
+  line-height: 1em;
 }
 
 #side {
   float: left;
   padding-top: 1em;
   padding-bottom: 1em;
-  width: 13em;
-  background: #141;
+  width: 400px;
+  background: #8b8b8b;
 }
 
 #side a {
@@ -205,4 +212,23 @@ div.top_left_corner {
   font: bold smaller sans-serif;
 }
 
+li.attending {
+  list-style-image: url(images/attend.gif);
+}
 
+#footer {
+  clear: both;
+  border-bottom: 3px solid #43619E; 
+  border-top: 3px solid #43619E; 
+  font-size: 0.6em;
+  color: navy; 
+  padding: 5px; 
+  text-align:center; 
+  background:#fff;
+}
+
+p#title {
+  font: small-caps 1.2em/2em "Arial", serif;
+  line-height: 0.65em;
+  padding-top:0.6em;
+}

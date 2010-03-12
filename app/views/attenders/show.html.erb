@@ -1,18 +1,12 @@
+<h2>  <%=h @attender.name %></h2>
 <p>
-  <b>Name:</b>
-  <%=h @attender.name %>
-</p>
-
-<p>
-  <b>Email:</b>
+  <b>email:</b>
   <%=h @attender.email %>
 </p>
-
 <p>
-  <b>Organizator:</b>
-  <%=h @attender.organizator %>
+  <b>Telefono:</b>
+  <%=h @attender.phone %>
 </p>
 
-
-<%= link_to 'Edit', edit_attender_path(@attender) %> |
-<%= link_to 'Back', attenders_path %>
+<%= link_to 'Conferma modifiche', edit_attender_path(@attender) %> |
+<%= link_to 'Indietro', attenders_path %>

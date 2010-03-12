@@ -82,4 +82,8 @@ class AttendersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def self.find_attender(attender_id)
+    Attender.find(attender_id)
+  end
 end

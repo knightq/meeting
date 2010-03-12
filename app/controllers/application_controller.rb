@@ -2,9 +2,24 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  include SimplestAuth::Controller
+  session :session_key => '_meeting_session_id'
+  helper_method :admin?
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  protected
+  def authorize
+    unless admin?
+      flash[:notice] = "Accesso non autorizzato"
+      redirect_to home_path
+      false
+    end
+  end
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  def admin?
+    session[:password] == "superadmin"
+  end
 end

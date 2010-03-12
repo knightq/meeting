@@ -1,0 +1,3 @@
+
+<%= link_to 'Conferma modifiche', edit_attender_path(@attender) %> |
+<%= link_to 'Indietro', attenders_path %>

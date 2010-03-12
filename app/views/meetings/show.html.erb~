@@ -1,0 +1,10 @@
+<h2>  <%=h @meeting.title %></h2>
+<%= image_tag(@meeting.image_url, :size => "75x100", :alt => "Immagine evento") %>
+<p>
+  <b>Descrizione:</b>
+  <%=h @meeting.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Indietro', meetings_path %>

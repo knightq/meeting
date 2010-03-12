@@ -4,13 +4,6 @@ class MeetingController < ApplicationController
    @meetings = Meeting.all
   end
 
-  def show
-   @model = Meeting.find(params[:id])
-  end
-
-   @meetings = Meeting.all
-  end
-
   def add_to_cart
     meeting = Meeting.find(params[:id])
     @cart = find_cart
@@ -21,6 +14,16 @@ class MeetingController < ApplicationController
     redirect_to :action => 'index'
   end
 
+  # GET /attenders/1
+  # GET /attenders/1.xml
+  def show
+    @model = Meeting.find(params[:id])
+    @meeting = Meeting.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @meeting }
+    end
+  end
 
 private
   def find_cart

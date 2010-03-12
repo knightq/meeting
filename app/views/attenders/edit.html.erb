@@ -1,22 +1,10 @@
-<h1>Editing attender</h1>
+<h1>Modifica Invitato</h1>
 
 <% form_for(@attender) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :organizator %><br />
-    <%= f.check_box :organizator %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Aggiorna' %>
   </p>
 <% end %>
 

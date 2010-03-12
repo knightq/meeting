@@ -1,0 +1,12 @@
+<h1>Modifica Invitato</h1>
+
+<% form_for(@attender) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Aggiorna' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @attender %> |
+<%= link_to 'Back', attenderss_path %>

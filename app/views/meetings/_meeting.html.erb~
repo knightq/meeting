@@ -1,0 +1,15 @@
+<tr>
+  <td width="5%">
+    <%= image_tag('/images/attend.gif', :title => 'Sono coinvolto nell''evento') if am_i_involved_in?(meeting.id) %>
+    <%= image_tag('/images/attend_add.gif', :title => 'Partecipa all''evento') unless am_i_involved_in?(meeting.id) %>
+  </td>
+  <td width="10%">
+    <%= "da stabilire" if meeting.date == nil %>
+    <%= meeting.date unless meeting.date == nil %>
+  </td>
+  <td width="5%"><%= image_tag(meeting.image_url, :size=>"37x50") %></td>
+  <td width="60%"><%=h meeting.title %></td>
+  <td width="20%">
+    <%= render :partial => "participant", :collection => participants_to(meeting) unless participants_to(meeting).empty? %>  </td>
+  </tr>
+

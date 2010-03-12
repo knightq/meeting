@@ -1,0 +1,9 @@
+class ChangePhoneToString < ActiveRecord::Migration
+  def self.up
+    change_column :attender, :phone, :string
+  end
+
+  def self.down
+    change_column :attender, :phone, :integer
+  end
+end
