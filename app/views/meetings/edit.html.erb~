@@ -17,4 +17,4 @@
 <% end %>
 
 <%= link_to 'Mostra', @meeting %> |
-<%= link_to 'Back', meetings_path %>
+<%= link_to 'Indietro', meetings_path %>

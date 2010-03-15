@@ -43,7 +43,7 @@ module MeetingsHelper
   def participants_to(meeting)
     participants = ParticipationsController.participants_to(meeting.id)
   end
-  def find_attender(attender_id)
-    AttendersController.find_attender(attender_id)
+  def find_user(user_id)
+    User.find(user_id)
   end
 end

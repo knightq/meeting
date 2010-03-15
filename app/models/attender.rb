@@ -1,6 +1,6 @@
 class Attender < ActiveRecord::Base
-  include SimplestAuth::Model   
-  authenticate_by :email
+#  include SimplestAuth::Model   
+#  authenticate_by :email
 
   has_many :participations
   has_many :meetings, :through => :participations

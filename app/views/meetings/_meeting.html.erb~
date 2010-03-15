@@ -1,15 +1,19 @@
 <tr>
   <td width="5%">
-    <%= image_tag('/images/attend.gif', :title => 'Sono coinvolto nell''evento') if am_i_involved_in?(meeting.id) %>
-    <%= image_tag('/images/attend_add.gif', :title => 'Partecipa all''evento') unless am_i_involved_in?(meeting.id) %>
+    <%= link_to image_tag ('/images/attend_add.gif', :title => 'Partecipa all''evento', :border=>0),
+	 :after => "new Effect.Highlight(this.parentNode, { startcolor: '#ffff99', endcolor: '#ffffff' }); return false;",
+	 :action => 'add_me_to_event',
+	 :id => meeting.id unless am_i_involved_in?(meeting.id) %>
+    <%= link_to image_tag('/images/attend_remove.gif', :title => 'Rinuncia all''evento', :border => 0) , :action => 'remove_me_from_event', :id => meeting.id if am_i_involved_in?(meeting.id) %>
   </td>
   <td width="10%">
-    <%= "da stabilire" if meeting.date == nil %>
+    <%= link_to image_tag('/images/icon_calendar.png', :title => 'Vedi e proponi date', :border => 0) , :controller => 'proposal_dates', :action => 'index', :meeting_id => meeting.id if meeting.date == nil %>
     <%= meeting.date unless meeting.date == nil %>
   </td>
   <td width="5%"><%= image_tag(meeting.image_url, :size=>"37x50") %></td>
   <td width="60%"><%=link_to meeting.title, meeting %></td>
   <td width="20%">
-    <%= render :partial => "participant", :collection => participants_to(meeting) unless participants_to(meeting).empty? %>  </td>
+    <%= render :partial => "participant", :collection => participants_to(meeting) unless participants_to(meeting).empty? %>
+  </td>
 </tr>
 

@@ -1,1 +1,1 @@
-<li><%=link_to find_attender(participant.attender_id).name, :controller => 'attenders', :action => 'show', :id => find_attender(participant.attender_id).id %></li> 
+<li class="participant"><%=link_to find_user(participant.user_id).name, :controller => 'users', :action => 'show', :id => find_user(participant.user_id).id %></li> 

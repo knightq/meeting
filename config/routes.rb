@@ -1,12 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :participations
+  map.resources :attenders, :meetings, :sessions, :participations, :proposal_dates, :users
+  map.resource :user_session
+  map.resource :account, :controller => "users"
 
-  map.resources :attenders, :meetings, :sessions
-
-  map.home '', :controller => "welcome", :action => 'index'
-
-  map.login 'login', :controller => 'sessions', :action => 'new'
-  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
+  map.home '', :controller => "user_sessions", :action => 'new'
+#  map.login 'login', :controller => 'sessions', :action => 'new'
+#  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -40,8 +39,9 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "meetings"
-  # would recognize http://www.example.com/ as
+  # map.root :controller => "meetings"
+  map.root :controller => "user_sessions", :action => "new" # optional, this just sets the root route
+# would recognize http://www.example.com/ as
   params = { :controller => 'meetings', :action => 'index' }
 
 

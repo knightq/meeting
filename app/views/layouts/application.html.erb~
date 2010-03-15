@@ -6,40 +6,53 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Organizzatori di incontri - Sviluppato in RoR da Andrea Salicetti</title>
   <%= stylesheet_link_tag 'calendar/blue/style', 'meeting', :media => 'all' %>
+  <script src="/javascripts/prototype.js" type="text/javascript"></script>
+  <script src="/javascripts/scriptaculous.js" type="text/javascript"></script>
+  <%= dhtml_calendar_includes %>
 </head>
 <body id="meeting">
   <div id="banner">
     <p id="title"><%= @page_title || "Meeting Planner" %></p>
+    <%= image_tag('/images/account.gif', :title => @current_user.name, :border=>0, :class => 'user_info') if @current_user %>
+    <div id="user_info">
+        <%= link_to @current_user.name, account_path, :class => is_active?("users", "index") if @current_user %>
+    </div>
   </div>
 
   <div id="columns">
      <div id="side">
 
-	<%= calendar(:year => Date.today.year, :month => Date.today.month, :first_day_of_week => 1) do |d|
-	    cell_text = "#{d.mday}<br />"
-	    cell_attrs = {:class => 'day'}
-	    Meeting.all.each do |e|
-	      if e.date 
-		if e.date == d
-		  cell_attrs[:class] = 'specialDay'
-		  cell_text = %{
-		     <div class="top_left_corner">#{d.mday}</div> 
-		     <img src="#{e.image_url}" height="24px"/>
-		  }
-		end
-	      else
-		
-	      end
-	    end
-	    [cell_text, cell_attrs]
-	  end
+	<%=# calendar(:year => Date.today.year, :month => Date.today.month, :first_day_of_week => 1) do |d|
+	   # cell_text = "#{d.mday}<br />"
+	   # cell_attrs = {:class => 'day'}
+	   # Meeting.all.each do |e|
+	   #   if e.date 
+	   #	if e.date == d
+	#	  cell_attrs[:class] = 'specialDay'
+	#	  cell_text = %{
+	#	     <div class="top_left_corner">#{d.mday}</div> 
+	#	     <img src="#{e.image_url}" height="24px"/>
+	#	  }
+	#	end
+	 #     else
+	#	
+	 #     end
+	  #  end
+	#    [cell_text, cell_attrs]
+	#  end
 	%>
-	<p class="menu_item">
-	<%= link_to "Home", :controller => "welcome", :action => "index" %>
-        </p>
-	<p  class="menu_item">
-	<%= link_to "Eventi in programma", :controller => "meetings", :action => "index" %>
-	</p>
+	<% if current_user %>
+	  <p class="menu_item">
+	    <%= link_to "Eventi in programma", :controller => "meetings", :action => "index", :class => is_active?("meetings", "index")%>
+	  </p>
+          <p class="menu_item">
+	    <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Sicuro che vuoi scollegarti?" %>
+          </p>
+	<% else %>
+ 	  <p class="menu_item">
+	    <%= link_to "Login", :controller => "user_session", :action => "new" %>
+          </p>
+        <% end %>
 
      </div>
      <div id="main">

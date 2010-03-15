@@ -4,7 +4,11 @@
   <b>Descrizione:</b>
   <%=h @meeting.body %>
 </p>
+<p>
+  <b>Durata prevista:</b>
+  <%=h @meeting.duration %> ore
+</p>
 
 
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Modifica', edit_meeting_path(@meeting) %> |
 <%= link_to 'Indietro', meetings_path %>

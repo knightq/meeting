@@ -1,6 +1,15 @@
 <h1>Benvenuto</h1>
 
 <p>
-	Effettua il login per esprimere preferenze sulle date degli eventi in programma.
+ Effettua il login per esprimere preferenze sulle date degli eventi in programma.
 </p>
-<% end %>
+
+<%= form.label :login %><br />
+<%= form.text_field :login %><br />
+<br />
+<%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+<%= form.password_field :password %><br />
+
+<p>Oppure 
+<%= link_to 'registrati', new_user_path %>
+</p>

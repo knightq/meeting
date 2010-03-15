@@ -1,8 +1,9 @@
 class ParticipationsController < ApplicationController
+  before_filter :require_user
 
   def self.am_i_involved_in?(meeting_id)
     puts session
-    Participation.exists?(:meeting_id => meeting_id, :attender_id => 1)     
+    Participation.exists?(:meeting_id => meeting_id, :user_id => 1)     
   end
 
   def self.participants_to(meeting_id)
@@ -34,9 +35,11 @@ class ParticipationsController < ApplicationController
   # GET /participations/new
   # GET /participations/new.xml
   def new
+    @meeting = Meeting.find(params[:meeting_id])
     @participation = Participation.new
-    @all_attenders = Attender.all
-
+    @participation.meeting_id = params[:meeting_id]
+    @all_users = User.find(:all, :conditions => ["id NOT IN (?)", params[:already_invited_user_ids]])
+  
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @participation }
@@ -52,11 +55,13 @@ class ParticipationsController < ApplicationController
   # POST /participations.xml
   def create
     @participation = Participation.new(params[:participation])
+    @participation.meeting_id = params[:meeting_id]
+    @participation.user_id = params[:user_id]
 
     respond_to do |format|
       if @participation.save
-        flash[:notice] = 'Participation was successfully created.'
-        format.html { redirect_to(@participation) }
+        flash[:notice] = 'Invito accettato.'
+        format.html { redirect_to(:controller => 'proposal_dates', :meeting_id => @participation.meeting_id) }
         format.xml  { render :xml => @participation, :status => :created, :location => @participation }
       else
         format.html { render :action => "new" }

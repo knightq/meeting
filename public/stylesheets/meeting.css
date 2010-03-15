@@ -21,6 +21,15 @@ p {
   font-size: 1em sans-serif;
 }
 
+a.active {
+  font-weight:  bold;
+}
+
+p.menu_item {
+  line-height: 0.5em;
+  padding-left: 25px;
+}
+
 div.top_left_corner {
   color: navy;
   border: solid black thin;
@@ -88,6 +97,21 @@ div.top_left_corner {
   font: 1.2em/2em "Arial", serif;
 }
 
+#user_info {
+  font-size: 0.7em;
+  text-decoration: none;
+  font-color: #fff;
+  width: 95%;
+  position: absolute;
+  top: 45px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+#user_info img {
+  float: right;
+}
+
 #main {
   color: #000;
   margin-left: 400px;
@@ -108,8 +132,9 @@ div.top_left_corner {
 }
 
 #side a {
-  color: #bfb;
-  font-size: small;
+  color: #FFb;
+  font-size: medium;
+  text-decoration: none;
 }
 /* END:mainlayout */
 
@@ -231,4 +256,16 @@ p#title {
   font: small-caps 1.2em/2em "Arial", serif;
   line-height: 0.65em;
   padding-top:0.6em;
+}
+
+.odd {
+  background-color:#F6F7F8;
+}
+
+.even {
+  background-color:#FFFFFF;
+}
+
+li.participant {
+  font-size: 0.8em;
 }

@@ -1,7 +1,34 @@
 #require 'plugins/calendar'
 class MeetingsController < ApplicationController
+  before_filter :require_user
+
   def index
    @meetings = Meeting.all
+  end
+
+  def add_me_to_event
+    meeting = Meeting.find(params[:id])
+    @participation = Participation.new
+    @participation.meeting_id = meeting.id
+    @participation.user_id = current_user.id
+    @participation.save
+    flash[:notice] = "Partecipazione registrata"
+    redirect_to :action => 'index'
+  rescue ActiveRecord::RecordNotFound
+    logger.error("Tentato accesso a meeting non valido #{params[:id]}" )
+    flash[:notice] = "Meeting non valido"
+    redirect_to :action => 'index'
+  end
+
+  def remove_me_from_event
+    meeting = Meeting.find(params[:id])
+    Participation.delete_all(["meeting_id = ? AND user_id = ?", params[:id], current_user.id])
+    flash[:notice] = "Rimossa la partecipazione all''evento #{meeting.title}"
+    redirect_to :action => 'index'
+  rescue ActiveRecord::RecordNotFound
+    logger.error("Impossibile rimuoverti dall''evento!" )
+    flash[:notice] = "Impossibile rimuoverti dall''evento!"
+    redirect_to :action => 'index'
   end
 
   def add_to_cart
@@ -13,7 +40,7 @@ class MeetingsController < ApplicationController
     flash[:notice] = "Meeting non valido"
     redirect_to :action => 'index'
   end
-p
+
   # GET /meetings/1
   # GET /meetings/1.xml
   def show
@@ -79,5 +106,4 @@ private
   def find_cart
     session[:cart] ||= Cart.new
   end
-
 end
