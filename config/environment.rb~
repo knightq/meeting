@@ -66,7 +66,7 @@ end
   }
 
 ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
-  :default => ' %d.%m.%Y '
+  :default => ' %d/%m/%Y '
 )
 
 
