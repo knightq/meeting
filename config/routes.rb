@@ -3,6 +3,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
   map.resource :account, :controller => "users"
 
+  #Heroku
+  map.heroku_sass_and_cache
+
   map.home '', :controller => "user_sessions", :action => 'new'
 #  map.login 'login', :controller => 'sessions', :action => 'new'
 #  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
