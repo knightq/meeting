@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   #config.gem "calendar_helper", :lib => "calendar_helper"
 #  config.gem "matthuhiggins-foreigner", :lib => "foreigner", :source => "http://gemcutter.org"
 #  config.gem 'simplest_auth'
+  config.gem 'authlogic'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
