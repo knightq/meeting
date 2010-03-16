@@ -39,5 +39,34 @@ Rails::Initializer.run do |config|
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-  config.i18n.default_locale = :en
+  config.i18n.default_locale = :it
+
+  #Mailer
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.kion.it',
+    :domain => 'kion.it',
+    :port => 25,
+    :authentication => :login,
+    :user_name => 'asalicetti@kion.it',
+    :password => '4r5t6y/U(I)O'
+  }
+
 end
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.kion.it',
+    :domain => 'kion.it',
+    :port => 25,
+    :authentication => :login,
+    :user_name => 'asalicetti@kion.it',
+    :password => '4r5t6y/U(I)O'
+  }
+
+ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
+  :default => ' %d.%m.%Y '
+)
+
+

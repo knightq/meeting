@@ -5,10 +5,20 @@ class Participation < ActiveRecord::Base
   def self.find_attenders_for(meeting_id)
     participations_to_meeting = Participation.find(:all, :include => [ :meeting, :user ], :conditions => ['meeting_id = ?', meeting_id])
     attenders = []
-    participations_to_meeting.each do |p|
-      attenders << p.user
-    end
+    participations_to_meeting.each { |p| attenders << p.user }
     attenders.sort! {|x,y| x.name <=> y.name }
   end
 
 end
+
+
+# == Schema Info
+# Schema version: 20100315160752
+#
+# Table name: participations
+#
+#  id         :integer(4)      not null, primary key
+#  meeting_id :integer(4)
+#  user_id    :integer(4)
+#  created_at :datetime
+#  updated_at :datetime

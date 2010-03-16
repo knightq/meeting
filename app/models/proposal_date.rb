@@ -1,5 +1,6 @@
 class ProposalDate < ActiveRecord::Base
   belongs_to :meeting
+  validates_presence_of :date
 
   def self.find_dates_for(meeting_id)
     dates = []
@@ -7,3 +8,14 @@ class ProposalDate < ActiveRecord::Base
   end
 
 end
+
+# == Schema Info
+# Schema version: 20100315160752
+#
+# Table name: proposal_dates
+#
+#  id         :integer(4)      not null, primary key
+#  meeting_id :integer(4)
+#  date       :date
+#  created_at :datetime
+#  updated_at :datetime

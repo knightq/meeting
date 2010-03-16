@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
 
+  attr_accessor :calendar
 
 #  include SimplestAuth::Controller
 #  session :session_key => '_meeting_session_id'
@@ -41,6 +42,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_back_or(path)
+    redirect_to :back
+    rescue ActionController::RedirectBackError
+    redirect_to path
+  end
 protected
 #  def authorize
 #    unless admin?
@@ -64,12 +70,6 @@ private
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
-  end
-
-  def redirect_back_or(path)
-    redirect_to :back
-    rescue ActionController::RedirectBackError
-    redirect_to path
   end
 
 end

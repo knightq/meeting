@@ -17,8 +17,28 @@ h1 {
         vertical-align: top;
 }
 
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
 p {
   font-size: 1em sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#user_info a {
+  color: white;
 }
 
 a.active {
@@ -95,6 +115,7 @@ div.top_left_corner {
 #columns {
   background: #8b8b8b;
   font: 1.2em/2em "Arial", serif;
+  width: 100%;
 }
 
 #user_info {
@@ -114,7 +135,6 @@ div.top_left_corner {
 
 #main {
   color: #000;
-  margin-left: 400px;
   padding-top: 1ex;
   padding-left: 2em;
   background: white;
@@ -127,7 +147,8 @@ div.top_left_corner {
   float: left;
   padding-top: 1em;
   padding-bottom: 1em;
-  width: 400px;
+  width: 30%;
+  min-width: 350px;
   background: #8b8b8b;
 }
 
@@ -268,4 +289,8 @@ p#title {
 
 li.participant {
   font-size: 0.8em;
+}
+
+.calendar {
+  padding-left: 50px;
 }

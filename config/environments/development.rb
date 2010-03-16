@@ -15,3 +15,20 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.kion.it',
+    :domain => 'kion.it',
+    :port => 25,
+    :authentication => :login,
+    :user_name => 'asalicetti@kion.it',
+    :password => '4r5t6y/U(I)O'
+}
+ActionMailer::Base.perform_deliveries = true # the "deliver_*" methods are available
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.default_charset = "utf-8"
+ActionMailer::Base.default_content_type = "text/html" # default: "text/plain"
+ActionMailer::Base.default_mime_version = "1.0"
+ActionMailer::Base.default_implicit_parts_order = [ "text/html", "text/plain"]
+
