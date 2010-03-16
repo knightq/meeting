@@ -1,0 +1,13 @@
+<h1><%= @meeting.title %></h1>
+<h2>Invita un utente all'evento</h2>
+
+<% form_for(@participation) do |f| %>
+  <%= f.error_messages %>
+  <%= hidden_field_tag :meeting_id, params[:meeting_id] %>
+  <%= select_tag :user_id, options_from_collection_for_select(@all_users, "id", "name"), :multiple=>false, :width => 50 %>
+  <p>
+    <%= f.submit 'Invita' %>
+  </p>
+<% end %>
+
+<%= link_to 'Indietro', :controller => 'proposal_dates', action => 'index', :meeting_id => params[:meeting_id] %>

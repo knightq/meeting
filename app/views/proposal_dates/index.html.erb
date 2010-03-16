@@ -1,0 +1,61 @@
+<h1><%=@meeting.title %></h1>
+<h2>Date proposte per il meeting</h2>
+
+<table class="list">
+<thead>
+    <tr>
+    <th></th>
+    <%if @dates %>
+      <% @dates.each do |pdate| %>
+        <% @pdate_current = pdate %>
+        <th class='<%=pdate_color(pdate)%>'>
+          <%=h(pdate.date.strftime('%a %d %b')) %>
+  	  <%= link_to image_tag('/images/send_mail.gif', :title => 'Invia email di notifica per questa data', :border => 0), 
+		:controller => 'emailer', 
+		:action => :send_mail, 
+		:attender_ids => attender_ids_for, 
+		:meeting_id => @meeting.id,
+		:date => @pdate_current.date,
+		:proposer_id => @current_user.id, 
+		:type => email_type unless no_confirmation_for(pdate.id) %>
+        </th>
+      <% end %>
+    <th>
+       <%= link_to image_tag('/images/icon_calendar_add.png', :title => 'Proponi una nuova data', :border => 0), :controller => 'proposal_dates', :action => 'new', :meeting_id => @meeting.id %>
+    </th>
+    </tr>
+</thead>
+<tbody>
+<% @attenders.each do |attender| -%>
+<tr class="<%= cycle('odd', 'even') %>">
+  <td><%= h attender.name%></td>
+    <%if @dates%>
+      <% @dates.each do |pdate| %>
+        <td align="center">
+          <%= if attender.id == current_user.id
+                link_to image_tag(thumb_img(pdate.id, attender.id), 
+				   :border => 0,
+				   :onmouseover => "this.src='" + thumb_img_hover(pdate.id, attender.id) +"'", 
+ 		  		   :onmouseout => "this.src='" + thumb_img(pdate.id, attender.id) + "'"), 
+		  :controller => 'proposal_date_users',
+		  :action => thumb_action(pdate.id, attender.id),
+		  :meeting_id => @meeting.id,
+		  :proposal_date_id => pdate.id,
+		  :user_id => attender.id
+              else
+                image_tag thumb_img(pdate.id, attender.id)
+              end 
+	  %>
+	</td>
+      <% end %>
+    <% end %>
+</tr>
+<% end -%>
+<tr>
+  <td><%= link_to 'Invita utente', :controller => 'participations', :action => 'new', :meeting_id => @meeting.id, :already_invited_user_ids => @attenders.collect {|a| a.id } %></td>
+</tr>
+</tbody>
+</table>
+<% end %>
+
+<%= link_to 'Indietro', meetings_path %>

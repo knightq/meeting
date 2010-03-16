@@ -1,0 +1,44 @@
+  <table>
+    <tbody>
+       <tr>
+	  <td>
+	    <%= form.label :nome %><br />
+	    <%= form.text_field :name %>
+	  </td>
+	  <td>
+	    <%= form.label :email %><br />
+	    <%= form.text_field :email %>
+	  </td>
+	</tr>
+  	<tr>
+	  <td>
+	    <%= form.label :telefono %><br />
+	    <%= form.text_field :phone %>
+	  </td>
+	  <td>
+	  </td>
+	</tr>
+  	<tr>
+	  <td>
+	    <%= form.label :user_name %><br />
+	    <%= form.text_field :login %>
+	  </td>
+	  <td>
+	  </td>
+	</tr>
+  	<tr>
+	  <td>
+	    <%= form.label :password %><br />
+	    <%= form.password_field :password %>
+	  </td>
+	  <td>
+	   <%= form.label :Conferma_password %><br />
+	   <%= form.password_field :password_confirmation %>
+	  </td>
+	</tr>
+    </tbody>
+  </table>
+
+<%= form.label :login %><br />
+<%= form.text_field :login %><br />
+

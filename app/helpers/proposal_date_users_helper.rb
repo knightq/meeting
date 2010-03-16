@@ -1,0 +1,2 @@
+module ProposalDateUsersHelper
+end

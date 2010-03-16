@@ -1,0 +1,58 @@
+<p>
+  <b>Login:</b><%=h @user.login %>
+</p>
+ <table>
+    <tbody>
+       <tr>
+	  <td>
+		<p>
+		  <b>Nome:</b><%=h @user.name %>
+		</p>
+	  </td>
+	  <td>
+		<p>
+		  <b>Email:</b><%=h @user.email %>
+		</p>
+	  </td>
+	</tr>
+  	<tr>
+	  <td>
+		<p>
+		  <b>Telefono:</b><%=h @user.phone %>
+		</p>
+	  </td>
+	  <td>
+		<p>
+		  <b>Conteggio accessi:</b><%=h @user.login_count %>
+		</p>
+	  </td>
+	</tr>
+  	<tr>
+	  <td>
+		<p>
+		  <b>Ultima richiesta alle:</b><%=h @user.last_request_at %>
+		</p>
+	  </td>
+	  <td>
+		<p>
+		  <b>Ultimo accesso alle:</b><%=h @user.last_login_at %>
+		</p>
+	  </td>
+	</tr>	
+  	<tr>
+	  <td>
+<p>
+  <b>IP di ultimo accesso:</b> <%=h @user.last_login_ip %>
+</p>
+	  </td>
+	  <td>
+<p>
+  <b>IP di accesso corrente:</b><%=h @user.current_login_ip %>
+</p>
+	  </td>
+	</tr>
+    </tbody>
+  </table>
+  
+<%= link_to 'Modifica', edit_account_path %>
+<%= link_to 'Indietro', redirect_back_or('meetings') %>

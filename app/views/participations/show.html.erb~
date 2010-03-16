@@ -1,0 +1,1 @@
+<%= link_to 'Indietro', :controller => 'proposal_dates', action => 'index', :meeting_id => @meeting.meeting_id %>
