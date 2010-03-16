@@ -5,11 +5,9 @@
 <% form_for(@proposal_date) do |f| %>
   <%= f.error_messages %>
   <%= hidden_field_tag :meeting_id, params[:meeting_id] %>
-  <%= hidden_field_tag :date %>
 
   <%= calendar_box 'proposal_date', 'date',
     {   :class => 'date',
-	:inputField => 'date',
         :field_title => 'Data',
         :button_image => 'calendar.gif',
         :button_title => 'Mostra calendario' },
