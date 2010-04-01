@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315160752) do
+ActiveRecord::Schema.define(:version => 20100317161314) do
 
   create_table "attenders", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(:version => 20100315160752) do
 
   add_index "participations", ["meeting_id"], :name => "participations_meeting_id_fk"
   add_index "participations", ["user_id"], :name => "participations_user_id_fk"
+
+  create_table "presentations", :force => true do |t|
+    t.string   "title"
+    t.integer  "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "proposal_date_users", :force => true do |t|
     t.integer  "user_id"
@@ -95,15 +102,5 @@ ActiveRecord::Schema.define(:version => 20100315160752) do
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"
   add_index "users", ["login"], :name => "index_users_on_login"
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
-
-  add_foreign_key "meetings", "attenders", :name => "meetings_organizator_fk", :column => "organizator"
-
-  add_foreign_key "participations", "meetings", :name => "participations_meeting_id_fk"
-  add_foreign_key "participations", "users", :name => "participations_user_id_fk"
-
-  add_foreign_key "proposal_date_users", "proposal_dates", :name => "proposal_date_users_proposal_date_id_fk"
-  add_foreign_key "proposal_date_users", "users", :name => "proposal_date_users_user_id_fk"
-
-  add_foreign_key "proposal_dates", "meetings", :name => "proposal_dates_meeting_id_fk"
 
 end

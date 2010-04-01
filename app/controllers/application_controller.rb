@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   def require_no_user
     if current_user
       #store_location
-      flash[:notice] = "You must be logged out to access this page"
+      flash[:notice] = "Non devi essere autenticato per accedere a questa pagina"
       redirect_to root_url
       return false
     end

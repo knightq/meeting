@@ -1,9 +1,11 @@
 #require 'plugins/calendar'
+
 class MeetingsController < ApplicationController
   before_filter :require_user
+#  active_scaffold
 
   def index
-   @meetings = Meeting.all
+   @meetings = Meeting.find(:all, :include => :organizator)
   end
 
   def add_me_to_event
@@ -22,7 +24,7 @@ class MeetingsController < ApplicationController
 
   def remove_me_from_event
     meeting = Meeting.find(params[:id])
-    Participation.delete_all([]"meeting_id = ? AND user_id = ?", params[:id], current_user.id])
+    Participation.delete_all(["meeting_id = ? AND user_id = ?", params[:id], current_user.id])
     flash[:notice] = "Rimossa la partecipazione all''evento #{meeting.title}"
     redirect_to :action => 'index'
   rescue ActiveRecord::RecordNotFound
@@ -45,7 +47,8 @@ class MeetingsController < ApplicationController
   # GET /meetings/1.xml
   def show
     @model = Meeting.find(params[:id])
-    @meeting = Meeting.find(params[:id])
+    @meeting = Meeting.find(params[:id], :include => :organizator)
+#    @organizator = User.find(@meeting.organizator)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @meeting }
@@ -55,6 +58,8 @@ class MeetingsController < ApplicationController
   # GET /meetings/1/edit
   def edit
     @meeting = Meeting.find(params[:id])
+    @all_users = User.all
+    @proposed_dates = ProposalDate.find_all_by_meeting_id(@meeting_id)
   end
 
   # PUT /meetings/1
@@ -100,6 +105,14 @@ class MeetingsController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @meeting }
     end
+  end
+
+  def destroy
+    puts "======================== #{params[:id]} ===================="
+    meeting = Meeting.find(params[:id])
+    meeting.destroy
+    flash[:notice] = "Meeting rimosso!"
+    redirect_to :action => 'index'
   end
 
 private

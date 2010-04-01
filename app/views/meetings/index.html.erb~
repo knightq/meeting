@@ -6,7 +6,7 @@
     <th width="10%">Data</th>
     <th width="5%"></th>
     <th width="60%">Titolo</th>
-    <th width="20%">Partecipanti</th>
+    <th width="20%">Invitati</th>
   </thead>
   <tbody>
     <%= render :partial => "meeting", :collection => @meetings %>

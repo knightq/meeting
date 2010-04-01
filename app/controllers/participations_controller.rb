@@ -1,11 +1,6 @@
 class ParticipationsController < ApplicationController
   before_filter :require_user
 
-  def self.am_i_involved_in?(meeting_id)
-    puts session
-    Participation.exists?(:meeting_id => meeting_id, :user_id => 1)     
-  end
-
   def self.participants_to(meeting_id)
     Participation.all(:conditions => ["meeting_id = ?", meeting_id])
   end

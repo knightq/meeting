@@ -37,13 +37,22 @@ module MeetingsHelper
   end
 
   def am_i_involved_in?(meeting_id)
-    ParticipationsController.am_i_involved_in?(meeting_id)
+    is_involved_in?(@current_user.id, meeting_id)     
+  end
+
+  def is_involved_in?(user_id, meeting_id)
+    Participation.exists?(:meeting_id => meeting_id, :user_id => user_id)     
   end
 
   def participants_to(meeting)
-    participants = ParticipationsController.participants_to(meeting.id)
+   ParticipationsController.participants_to(meeting.id)
   end
   def find_user(user_id)
     User.find(user_id)
   end
+
+  def users_participants_to(meeting)
+    ParticipationsController.participants_to(meeting.id).collect {|p| find_user(p.user_id).name }
+  end
+
 end

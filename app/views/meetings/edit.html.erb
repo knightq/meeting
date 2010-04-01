@@ -4,15 +4,25 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
+    <%= f.label :Titolo %><br />
     <%= f.text_field :title %>
   </p>
+  <p>
+    <%= f.label :Organizzatore %><br />
+    <%= f.collection_select(:organizator, @all_users, :id, :name, options = {:prompt => "-- Indica l'orgranizzatore --"}) %>
+  </p>
+  <% if @current_user.id == @meeting.organizator.id %>
+  <p>
+    <%= f.label :Data_fissata %><br />
+    <%= f.collection_select(:date, @proposed_dates, :date, :date, options = {:prompt => "-- Fissa la data --"}) %>
+  </p>
+  <% end %>
   <p>
     <%= f.label :durata_prevista %><br />
     <%= f.text_field :duration %>
   <p>
   <p>
-    <%= f.label :body %><br />
+    <%= f.label :Sommario %><br />
     <%= f.text_field :body %>
   </p>
   <p>

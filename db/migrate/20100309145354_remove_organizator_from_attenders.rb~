@@ -4,6 +4,6 @@ class RemoveOrganizatorFromAttenders < ActiveRecord::Migration
   end
 
   def self.down
-    add_column :attenders, :organizator
+    add_column :attenders, :organizator, :integer
   end
 end

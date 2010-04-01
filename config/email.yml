@@ -8,7 +8,7 @@ production:
     domain: kion.it
     authentication: :login
     user_name: asalicetti@kion.it
-    password: 4r5t6y/U(I)O
+    password: 3e4r5t&Y/U(I
   
 development:
   delivery_method: :smtp
@@ -18,4 +18,4 @@ development:
     domain: kion.it
     authentication: :login
     user_name: asalicetti@kion.it
-    password: 4r5t6y/U(I)O
+    password: 3e4r5t&Y/U(I

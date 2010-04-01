@@ -1,6 +1,6 @@
 class Participation < ActiveRecord::Base
   belongs_to :meeting
-  belongs_to :user
+  belongs_to :attender
 
   def self.find_attenders_for(meeting_id)
     participations_to_meeting = Participation.find(:all, :include => [ :meeting, :user ], :conditions => ['meeting_id = ?', meeting_id])
@@ -10,7 +10,6 @@ class Participation < ActiveRecord::Base
   end
 
 end
-
 
 # == Schema Info
 # Schema version: 20100315160752

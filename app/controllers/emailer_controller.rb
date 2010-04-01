@@ -10,7 +10,7 @@ class EmailerController < ApplicationController
     end
     respond_to do |format|
       flash[:notice] = 'Mail invitate.'
-      format.html { redirect_to (:controller => 'proposal_dates', :action => 'index', :meeting_id => params[:meeting_id]) }
+      format.html { redirect_to(:controller => 'proposal_dates', :action => 'index', :meeting_id => params[:meeting_id]) }
     end
   end
 

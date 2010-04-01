@@ -1,1 +1,6 @@
-<li><%=link_to find_user(participant.user_id).name, :controller => 'users', :action => 'show', :id => find_user(participant.user_id).id %></li> 
+<li class=<%= participant.user_id == meeting.organizator.id ? 'participant' : 'organizator' %>>
+   <%=link_to find_user(participant.user_id).name, 
+      :controller => 'users', 
+      :action => 'show', 
+      :id => participant.user_id %>
+</li> 

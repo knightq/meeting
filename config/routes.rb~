@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :attenders, :meetings, :sessions, :participations, :proposal_dates, :users
+  map.resources :attenders, :meetings, :sessions, :participations, :proposal_dates, :users, :presentations
   map.resource :user_session
   map.resource :account, :controller => "users"
-
+  #map.resource :export_events, :controller => 'proposal_dates'
+#  map.export_events '/export_events', :controller => 'proposal_dates', :action => 'export_events' 
   map.home '', :controller => "user_sessions", :action => 'new'
 #  map.login 'login', :controller => 'sessions', :action => 'new'
 #  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
@@ -16,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
+#  map.export_events 'export_events/:id', :controller => 'proposal_dates', :action => 'export_events'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products

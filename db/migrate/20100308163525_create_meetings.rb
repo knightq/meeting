@@ -4,6 +4,7 @@ class CreateMeetings < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.date :date
+      t.image_url :string
       t.time :start_time
       t.time :end_time
 

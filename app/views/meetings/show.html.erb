@@ -10,7 +10,12 @@
   <%=h @meeting.duration %> ore
 </p>
 <% end %>
+<p>
+  <b>Organizzatore:</b>
+  <%=h @meeting.organizator.name if @meeting.organizator %>
+</p>
 
 
 <%= link_to 'Modifica', edit_meeting_path(@meeting) %> |
+<%= link_to "Cancella", @meeting, :method => :delete %> |
 <%= link_to 'Indietro', meetings_path %>

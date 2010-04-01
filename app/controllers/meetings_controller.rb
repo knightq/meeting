@@ -1,9 +1,11 @@
 #require 'plugins/calendar'
+
 class MeetingsController < ApplicationController
   before_filter :require_user
+#  active_scaffold
 
   def index
-   @meetings = Meeting.all
+   @meetings = Meeting.find(:all, :include => :organizator)
   end
 
   def add_me_to_event
@@ -45,16 +47,20 @@ class MeetingsController < ApplicationController
   # GET /meetings/1.xml
   def show
     @model = Meeting.find(params[:id])
-    @meeting = Meeting.find(params[:id])
+    @meeting = Meeting.find(params[:id], :include => :organizator)
+#    @organizator = User.find(@meeting.organizator)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @meeting }
+      format.json  { render :json => @meeting }
     end
   end
 
   # GET /meetings/1/edit
   def edit
     @meeting = Meeting.find(params[:id])
+    @all_users = User.all
+    @proposed_dates = ProposalDate.find_all_by_meeting_id(@meeting_id)
   end
 
   # PUT /meetings/1
@@ -100,6 +106,14 @@ class MeetingsController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @meeting }
     end
+  end
+
+  def destroy
+    puts "======================== #{params[:id]} ===================="
+    meeting = Meeting.find(params[:id])
+    meeting.destroy
+    flash[:notice] = "Meeting rimosso!"
+    redirect_to :action => 'index'
   end
 
 private

@@ -1,5 +1,16 @@
 <tr>
-  <td width="5%">
+  <td width="2%">
+   <% if current_user.id == meeting.id %>
+      <%= link_to image_tag ('/images/bin.png', :title => 'Cancella l''evento', :border=>0),
+	   meeting,
+	   :confirm => "Sicuro?",
+	   :method => :delete,
+	   :id => meeting.id %>
+
+   <% end %>
+  </td>
+
+  <td width="3%">
     <%= link_to image_tag ('/images/attend_add.gif', :title => 'Partecipa all''evento', :border=>0),
 	 :after => "new Effect.Highlight(this.parentNode, { startcolor: '#ffff99', endcolor: '#ffffff' }); return false;",
 	 :action => 'add_me_to_event',
@@ -13,7 +24,9 @@
   <td width="5%"><%= image_tag(meeting.image_url, :size=>"37x50") %></td>
   <td width="60%"><%=link_to meeting.title, meeting %></td>
   <td width="20%">
-    <%= render :partial => "participant", :collection => participants_to(meeting) unless participants_to(meeting).empty? %>
+
+    <%= render :partial => "participant", :collection => participants_to(meeting), :locals => { :meeting => meeting } unless participants_to(meeting).empty? %>
+    <% puts users_participants_to(meeting).to_sentence %>
   </td>
 </tr>
 

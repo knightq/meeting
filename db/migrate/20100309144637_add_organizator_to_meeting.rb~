@@ -1,6 +1,6 @@
 class AddOrganizatorToMeeting < ActiveRecord::Migration
   def self.up
-    #add_column :meetings, :organizator, :integer
+    add_column :meetings, :organizator, :integer
     add_foreign_key(:meetings, :attenders, :column => 'organizator')
   end
 

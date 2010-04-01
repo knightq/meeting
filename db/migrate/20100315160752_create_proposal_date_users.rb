@@ -1,17 +1,13 @@
 class CreateProposalDateUsers < ActiveRecord::Migration
   def self.up
-    create_table :proposal_date_users do |t|
-      t.integer :user_id
-      t.integer :proposal_date_id
-      t.timestamps
-    end
-    add_foreign_key(:proposal_date_users, :users)
-    add_foreign_key(:proposal_date_users, :proposal_dates)
+    remove_foreign_key(:participations, :users)
+    change_column :participations, :user, :attender
+    add_foreign_key(:participations, :attenders)
   end
 
   def self.down
-    remove_foreign_key(:proposal_date_users, :users)
-    remove_foreign_key(:proposal_date_users, :proposal_dates)
-    drop_table :proposal_date_users
+    change_column :participations, :attender, :user
+    remove_foreign_key(:participations, :attenders)
+    add_foreign_key(:participations, :users)
   end
 end

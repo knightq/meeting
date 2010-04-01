@@ -10,13 +10,6 @@
     <p>
 	Data proposta da <%=h @proposer.name %> per il meeting: <%=h @date %>.
     </p>
-    <p>
-	Partecipanti confermati (ad ora): 
-	<ul>
-	   <% for attender in @attenders %>
-	    <li><%= attender.name %></li> 
-	   <% end %>
-	</ul>
-    </p>
+   <p><a href="http://pc-salicetti/">Kion Meeting Planner</a> made by Andrea Salicetti with RoR ;) <p>
   </body>
 </html> 

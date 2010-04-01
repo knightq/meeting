@@ -288,9 +288,16 @@ p#title {
 }
 
 li.participant {
-  font-size: 0.8em;
+  font-size: 0.7em;
+  list-style-image: url(../images/participant.gif);
+  line-height: 1em;
 }
 
-#calendar {
+li.organizator {
+  font-size: 0.8em;
+  list-style-image: url(../images/organizator.gif);
+}
+
+.calendar {
   padding-left: 50px;
 }

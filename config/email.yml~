@@ -13,9 +13,9 @@ production:
 development:
   delivery_method: :smtp
   smtp_settings:
-    address: 127.0.0.1
+    address: smtp.kion.it
     port: 25
-    domain: example.net
+    domain: kion.it
     authentication: :login
     user_name: asalicetti@kion.it
     password: 4r5t6y/U(I)O

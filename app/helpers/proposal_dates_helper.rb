@@ -44,11 +44,15 @@ module ProposalDatesHelper
   end
 
   def confirmed_by_all(pdate)
-    inviteds = Participation.find_attenders_for(pdate.meeting_id)# id degli invitati all'evento
+    inviteds = involved_in(pdate.meeting_id)
     pds = ProposalDateUser.all(:conditions => ['proposal_date_id = ?', pdate.id])# Tutte le accettazioni per la data proposta
     inviteds ||= []
     pds ||= []
     pds.size == inviteds.size
+  end
+
+  def involved_in(meeting_id)
+    Participation.find_attenders_for(meeting_id)
   end
 
 end

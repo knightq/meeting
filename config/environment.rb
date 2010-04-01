@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
 #  config.gem "matthuhiggins-foreigner", :lib => "foreigner", :source => "http://gemcutter.org"
 #  config.gem 'simplest_auth'
   config.gem 'authlogic'
+  config.gem 'tmail'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -70,4 +71,7 @@ ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
   :default => ' %d/%m/%Y '
 )
 
+#ActiveScaffold.set_defaults do |config| 
+ #   config.ignore_columns.add [:created_at, :updated_at]
+ # end
 

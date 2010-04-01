@@ -9,11 +9,14 @@
       <% @dates.each do |pdate| %>
         <% @pdate_current = pdate %>
         <th class='<%=pdate_color(pdate)%>'>
-          <%=h(pdate.date.strftime('%a %d %b')) %>
+          <%=h(pdate.date.strftime('%a %d %b')) %><br/>
+	 <%= #link_to image_tag('/images/ical.png', :title => 'Genera evento iCal per questa data', :border => 0),
+	     #export_events_url(:id => pdate.id)
+          %>
   	  <%= link_to image_tag('/images/send_mail.gif', :title => 'Invia email di notifica per questa data', :border => 0), 
 		:controller => 'emailer', 
 		:action => :send_mail, 
-		:attender_ids => attender_ids_for, 
+		:attender_ids => involved_in(pdate.meeting_id), 
 		:meeting_id => @meeting.id,
 		:date => @pdate_current.date,
 		:proposer_id => @current_user.id, 
